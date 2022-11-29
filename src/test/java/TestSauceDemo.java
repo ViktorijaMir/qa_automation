@@ -1,5 +1,8 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.checkerframework.common.initializedfields.qual.EnsuresInitializedFields;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeOptions;
 import page_object.InventoryPage;
 import page_object.LoginPage;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,9 +24,14 @@ public class TestSauceDemo {
 
     @BeforeMethod
         public void initialize() {
+
+            WebDriverManager.chromedriver().setup();
+            ChromeOptions options = new ChromeOptions();
+          //  options.addArguments("--headless");
             driver = new ChromeDriver();
             loginPage = new LoginPage(driver);
             inventoryPage = new InventoryPage(driver);
+            driver.get(SAUCE_URL);
         }
         @Test
         public void  authorizeTest(){
