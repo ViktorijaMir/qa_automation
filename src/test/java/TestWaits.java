@@ -1,4 +1,3 @@
-
 import constants.Generic;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -28,7 +27,7 @@ public class TestWaits {
     public void testWaiter() {
         driver.get(Generic.GOOGLE_URL);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("element_that_is_not_in_place")));
-       // driver.findElement(By.xpath("element_that_is_not_in_place"));
+        // driver.findElement(By.xpath("element_that_is_not_in_place"));
 
     }
 
@@ -38,4 +37,3 @@ public class TestWaits {
         driver.quit();
     }
 }
-
