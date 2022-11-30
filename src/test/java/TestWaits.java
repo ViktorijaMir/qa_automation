@@ -23,7 +23,7 @@ public class TestWaits {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
-    @Test
+    @Test(enabled = false)
     public void testWaiter() {
         driver.get(Generic.GOOGLE_URL);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("element_that_is_not_in_place")));
