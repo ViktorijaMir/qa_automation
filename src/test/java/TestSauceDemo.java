@@ -22,7 +22,7 @@ public class TestSauceDemo {
     LoginPage loginPage;
     InventoryPage inventoryPage;
 
-    @BeforeMethod
+    @BeforeMethod(description = "Preconditions")
         public void initialize() {
 
             WebDriverManager.chromedriver().setup();
